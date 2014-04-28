@@ -39,7 +39,7 @@ git commit -m "Add placeholder in input"
 <a name="html"></a>
 ## 2. HTML
 
-Некоторые части раздела про HTML взяты с ["Code Guide by @mdo"](https://github.com/mdo/code-guide).
+Основы раздела про HTML взяты с ["Code Guide by @mdo"](https://github.com/mdo/code-guide).
 
 ### Оглавление HTML
 
@@ -256,7 +256,7 @@ git commit -m "Add placeholder in input"
 <a name="css"></a>
 ## 3. CSS
 
-Некоторые части раздела про HTML взяты с [Code Guide by @mdo](https://github.com/mdo/code-guide) и ["Разговорный CSS"](https://github.com/necolas/idiomatic-css/).
+Основы раздела про CSS взяты с [Code Guide by @mdo](https://github.com/mdo/code-guide) и ["Разговорный CSS"](https://github.com/necolas/idiomatic-css/).
 
 ### Оглавление CSS
 
@@ -264,7 +264,7 @@ git commit -m "Add placeholder in input"
 1. [Порядок обьявления в CSS] (#css-order)
 1. [Имена классов в CSS] (#css-class-name)
 1. [Производительность CSS] (#css-performance)
-1. [Адаптивность и медиа-запросы] (#mobile-first-and-media-queries)
+1. [Адаптивность и @media-запросы] (#mobile-first-and-media-queries)
 1. [Препроцессоры] (#css-pre-processors)
 1. [Комментарии в CSS] (#css-comments)
 
@@ -561,12 +561,12 @@ section
 ```
 
 <a name="mobile-first-and-media-queries"></a>
-### 3.5 Mobile First and Media Queries
+### 3.5 Адаптивность и @media-запросы
 
-Start the development with generic rules with and add media queries with mobile first.
+Начинайте разработку части кода с введения основных правил и @media-запросов для этой части.
 
 ```css
-/* Good */
+/* Правильно */
 .navbar {
   margin-bottom: 20px;
 }
@@ -591,7 +591,7 @@ Start the development with generic rules with and add media queries with mobile 
   }
 }
 
-/* Bad */
+/* Неправильно */
 .navbar {
   position: fixed;
   top: 0;
@@ -607,7 +607,7 @@ Start the development with generic rules with and add media queries with mobile 
 
 ```
 
-Keep the media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document.
+Держите @media-запросы как можно ближе к тому правилу, к которому они относятся. Не выделяйте их в отдельную таблицу стилей или в конец документа
 
 ```css
 .navbar { ... }
@@ -622,17 +622,17 @@ Keep the media queries as close to their relevant rule sets whenever possible. D
 ```
 
 <a name="css-pre-processors"></a>
-### 3.6. Pre-Processors
+### 3.6. Препроцессоры
 
-I use pre-processors in all projects. Today I use `LESS`.
+Во всех своих проектах я (автор) использую `LESS`.
 
-Warning with nesting rules of pre-processors. Continue keep without nesting.
+Осторожнее с гнездящимися элементами. Лучше просто продолжайте обходиться без них.
 
 ```css
-/* Good */
+/* Правильно */
 .nav-item { ... }
 
-/* Bad */
+/* Неправильно */
 .navbar {
   .nav {
     .nav-item {
@@ -642,101 +642,101 @@ Warning with nesting rules of pre-processors. Continue keep without nesting.
 }
 ```
 
-Provide semantic names for variables.
+Имена переменных должны быть *семантическими*.
 
 ```css
-/* Good */
+/* Правильно */
 @brand-primary: #049cdb;
 
-/* Bad */
+/* Неправильно */
 @color-blue: #049cdb;
 ```
 
 <a name="css-comments"></a>
-### 3.7. CSS Comments
+### 3.7. Комментарии в CSS
 
-All comments must be made using the syntax of the preprocessor in use.
+Все комментарии должны быть написаны в синтаксисе используемого препроцессора
 
 ```js
 //
-// Section
+// Раздел
 // --------------------------------------------------
 
-// Sub-section
+// Подраздел
 // --------------------------------------------------
 
 //
-// Commentary block
+// Блок комментариев
 //
 //
 
-// Simple commentary
+// Простой комментарий
 ```
 
 <a name="js"></a>
 ## 4. Javascript
 
-The main influences for the javascript rules are [idiomatic.js](https://github.com/rwldrn/idiomatic.js/) and [Zeno Rocha Coding Style](https://github.com/zenorocha/my-coding-style/).
+Основой этой части документа стали: ["idiomatic.js"](https://github.com/rwldrn/idiomatic.js/) и ["Zeno Rocha Coding Style"](https://github.com/zenorocha/my-coding-style/).
 
-### Javascript Summary
+### Оглавление Javascript
 
-1. [Javascript Syntax] (#js-syntax)
-1. [Javascript Variables] (#js-variables)
-1. [Javascript Performance] (#js-performance)
-1. [Javascript Comments] (#js-comments)
+1. [Синтаксис Javascript] (#js-syntax)
+1. [Переменные Javascript] (#js-variables)
+1. [Производительность Javascript-кода] (#js-performance)
+1. [Комментарии в Javascript] (#js-comments)
 
 <a name="js-syntax"></a>
-### 4.1. Javascript Syntax
+### 4.1. Синтаксис Javascript
 
-Use soft tabs with two spaces. You can configure your editor for this.
+Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
 ```js
-// Good
+// Правильно
 while (condition) {
   statements
 }
 
-// Bad
+// Неправильно
 while (condition) {
     statements
 }
 ```
 
-Always use semicolons.
+Всегда прописывайте точку с запятой в конце строки.
 
 ```js
-// Good
+// Правильно
 var me = $(this);
 test();
 
-// Bad
+// Неправильно
 var me = $(this)
 test()
 ```
 
-Always use single quotes.
+Всегда используйте одинарные кавычки
 
 ```js
-// Good
+// Правильно
 var string = '<p class="foo">Lorem Ipsum</p>';
 var noteClick = me.attr('data-note');
 
-// Bad
+// Неправильно
 var string = "<p class='foo'>Lorem Ipsum</p>";
 var noteClick = me.attr("data-note");
 ```
 
-Keep `else` in the same line of closure of the `if`.
+Пишите `else` на той же линии, что и закрывающая фигурная скобка блока инструкций выражения `if`.
 
 ```js
-// Good
+// Правильно
 if ( true ) {
   ...
 } else {
   ...
 }
 
-// Bad
+// Неправильно
 if ( true ) {
   ...
 }
@@ -745,52 +745,52 @@ else {
 }
 ```
 
-Add spaces between operators.
+Добавляйте пробелы между операторами.
 
 ```js
-// Good
+// Правильно
 for (i = 0; i < 10; i++) {
   ...
 }
 
-// Bad
+// Неправильно
 for (i=0;i<10;i++) {
   ...
 }
 ```
 
-Never add a space between the keyword function and the function name.
+Никогда не добавляйте пробелов после названия функции и перед её первым аргументом.
 
 ```js
-// Good
+// Правильно
 foo(function() {
   ...
 });
 
-// Bad
+// Неправильно
 foo ( function () {
   ...
 });
 ```
 
-Add spaces outside parentheses `()` but avoid it inside.
+Добавляйте пробелы за пределами круглых скобок, но избегайте пробелов снаружи них.
 
 ```js
-// Good
+// Правильно
 if (condition) {
   statement
 }
 
-// Bad
+// Неправильно
 if( condition ){
   statement
 }
 ```
 
-For conditionals always use curly brackets `{}`.
+Для условных операторов if/else/else if всегда использовать фигурные скобки `{}`.
 
 ```js
-// Good
+// Правильно
 if (condition) {
   statement
 } else if (condition) {
@@ -799,76 +799,76 @@ if (condition) {
   statement
 }
 
-// Bad
+// Неправильно
 if (condition) statement;
 else if (condition) statement;
 else statement;
 ```
 
-For strict equality checks `===` should be used in favor of `==`.
+Проверка значений на равенство чаще всего должна быть строгой (`===`), нестрогую (`==`) использовать только в крайних случаях.
 
 ```js
-// Good
+// Правильно
 if (foo === 'foo') {
   statement
 }
 
-// Bad
+// Неправильно
 if (foo == 'foo') {
   statement
 }
 ```
 
 <a name="js-variables"></a>
-### 4.2. Javascript Variables
+### 4.2. Переменные Javascript
 
-All variables should be declared before used.
+Все переменные перед использованием должны быть объявлены.
 
 ```js
-// Good
+// Правильно
 var me = $(this);
 var noteClick = me.attr('data-note');
 notes[noteClick].play();
 
-// Bad
+// Неправильно
 notes[noteClick].play();
 var me = $(this);
 var noteClick = me.attr('data-note');
 ```
 
-Always use `var` to declare variables.
+Всегда используйте `var` для объявления переменных.
 
 ```js
-// Good
+// Правильно
 var me = $(this);
 
-// Bad
+// Неправильно
 me = $(this);
 ```
 
 <a name="js-performance"></a>
-### 4.3. Javascript Performance
+### 4.3. Производительность Javascript-кода
 
-Use [JSHint](http://www.jshint.com/) to detect errors and potential problems.
+Используйте [JSHint](http://www.jshint.com/) для выявления ошибок и проблем кода.
 
-Always minify and concat the javascript code. Task builders like [Grunt](http://gruntjs.com/) leaves this easier.
+Всегда сокращайте и конкатенируйте весь Javascipt-код. Таск-менеджеры, такие как [Grunt](http://gruntjs.com/) упрощают этот процесс.
 
 <a name="js-comments"></a>
-### 4.4. Javascript Comments
+### 4.4. Комментарии Javascript
 
-A single line above the code that is commented.
+Комментарий должен идти одной строкой над строкой комментируемого кода
 
 ```js
-// Good
-// Good example of comment
+// Правильно
+// Пример хорошего комментария
 var me = $(this);
 
-// Bad
-var me = $(this); // Bad example of comment
+// Неправильно
+var me = $(this); // Пример плохого комментария
 ```
 
 <a name="references"></a>
-## 5. References
+## 5. Ссылки
 
 * [Code Guide by @mdo](https://github.com/mdo/code-guide)
 * [idiomatic CSS](https://github.com/necolas/idiomatic-css/)
@@ -877,11 +877,12 @@ var me = $(this); // Bad example of comment
 * [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 <a name="translations"></a>
-## 6. Translations
+## 6. Переводы
 
 * [Português (Brasil)](/translations/pt-BR/)
+* [English](https://github.com/LFeh/coding-style)
 
 <a name="license"></a>
-## 7. License
+## 7. Лицензия
 
 [MIT License](http://felipefialho.mit-license.org/) © Luiz Felipe Tartarotti Fialho
