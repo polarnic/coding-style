@@ -461,97 +461,97 @@ git commit -m "Add placeholder in input"
 .nav_item { ... }
 ```
 
-Dashes serve as natural breaks in related class. Prefix class based on the closest parent or base class.
+Дефисы также необходимы для того, чтобы показать принадлежность одного селектора к другому. Префиксами можно подписывать селекторы родителей для удобного чтения кода.
 
 ```css
-/* Good */
+/* Правильно */
 .navbar { ... }
 .nav { ... }
 .nav-item { ... }
 .nav-link { ... }
 
-/* Bad */
+/* Неправильно */
 .item-nav { ... }
 .link-nav { ... }
 ```
 
-Avoid giving too short names for class and always choose meaningful names that provide the class function.
+Избегайте слишком коротких имён селекторов и всегда выбирайте пододящие по смыслу имена
 
 ```css
-/* Good */
+/* Правильно */
 .btn { ... }
 .page-header { ... }
 .progress-bar { ... }
 
-/* Bad */
+/* Неправильно */
 .s { ... }
 .ph { ... }
 .block { ... }
 ```
 
 <a name="css-performance"></a>
-### 3.4. CSS Performance
+### 3.4. Производительность CSS
 
-Never use IDs.
+Никогда не используйте идентификаторы.
 
 ```css
-/* Good */
+/* Правильно */
 .header { ... }
 .section { ... }
 
-/* Bad */
+/* Неправильно */
 #header { ... }
 #section { ... }
 ```
 
-Do not use selectors standards for not generic rules, always preferably for class.
+Всегда отдавайте предпочтения классам, а не названиям тегов или другим стандартным селекторам
 
 ```css
-/* Good */
+/* Правильно */
 .form-control { ... }
 .header { ... }
 .section { ... }
 
-/* Bad */
+/* Неправильно */
 input[type="text"] { ... }
 header
 section
 ```
 
-Avoid nesting elements, the preference is always to use class.
+Избегайте гнездящихся элементов, используйте вместо них отдельные классы
 
 ```css
-/* Good */
+/* Правильно */
 .navbar { ... }
 .nav { ... }
 .nav-item { ... }
 .nav-link { ... }
 
-/* Bad */
+/* Неправильно */
 .navbar ul { ... }
 .navbar ul li { ... }
 .navbar ul li a { ... }
 ```
 
-Nest only when need change the class comportament with interference for other class. Keep the nested on max of three elements.
+Используйте гнездящиеся элементы только когда нужно поменять свойства класса в зависимости от его вложенности в другие классы. Не используйте гнёзда с вложенностью более трёх селекторов
 
 ```css
-/* Good */
+/* Правильно */
 .modal-footer .btn { ... }
 .progress.active .progress-bar { ... }
 
-/* Bad */
+/* Неправильно */
 .modal-btn { ... }
 .progress.active .progress-bar .progress-item span { ... }
 ```
 
-Always minify the CSS code. Task builders like [Grunt](http://gruntjs.com/) leaves this easier.
+Сокращайте CSS-код. Таск-менеджеры, такие как [Grunt](http://gruntjs.com/) упрощают это.
 
 ```css
-<!-- Good -->
+/* Правильно */
 .navbar { ... }.nav { ... }.nav-item { ... }.nav-link { ... }
 
-<!-- Bad -->
+/* Неправильно */
 .nav-item {
   ...
 }
