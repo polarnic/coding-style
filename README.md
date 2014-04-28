@@ -211,9 +211,9 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="html-base"></a>
-### 2.6. HTML Base Code
+### 2.6. Базовый шаблон HTML-документа
 
-The following code is a HTML base for faster start the projects.
+Этот код следует использовать для быстрого начала работы над новым проектом:
 
 ```html
 <!DOCTYPE html>
@@ -233,14 +233,14 @@ The following code is a HTML base for faster start the projects.
 </head>
 <body>
 
-<!-- Scripts -->
+<!-- Скрипты -->
 <script src="assets/js/scripts.min.js"></script>
 
 </body>
 </html>
 ```
 
-For give support a olds Internet Explorer...
+Немного совместимости с IE...
 
 ```html
 <!DOCTYPE html>
@@ -256,41 +256,41 @@ For give support a olds Internet Explorer...
 <a name="css"></a>
 ## 3. CSS
 
-The main influences for the CSS rules are [Code Guide by @mdo](https://github.com/mdo/code-guide) and [idiomatic CSS](https://github.com/necolas/idiomatic-css/).
+Некоторые части раздела про HTML взяты с [Code Guide by @mdo](https://github.com/mdo/code-guide) и ["Разговорный CSS"](https://github.com/necolas/idiomatic-css/).
 
-### CSS Summary
+### Оглавление CSS
 
-1. [CSS Syntax] (#css-syntax)
-1. [CSS Declaration Order] (#css-order)
-1. [CSS Class Name] (#css-class-name)
-1. [CSS Performance] (#css-performance)
-1. [Mobile First and Media Queries] (#mobile-first-and-media-queries)
-1. [Pre-Processors] (#css-pre-processors)
-1. [CSS Comments] (#css-comments)
+1. [Синтаксис CSS] (#css-syntax)
+1. [Порядок обьявления в CSS] (#css-order)
+1. [Имена классов в CSS] (#css-class-name)
+1. [Производительность CSS] (#css-performance)
+1. [Адаптивность и медиа-запросы] (#mobile-first-and-media-queries)
+1. [Препроцессоры] (#css-pre-processors)
+1. [Комментарии в CSS] (#css-comments)
 
 <a name="css-syntax"></a>
-### 3.1. CSS Syntax
+### 3.1. Синтаксис
 
-Use soft tabs with two spaces. You can configure your editor for this.
+Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
 ```css
-/* Good */
+/* Правильно */
 .nav-item {
   display: inline-block;
   margin: 0 5px;
 }
 
-/* Bad */
+/* Неправильно */
 .nav-item {
     display: inline-block;
     margin: 0 5px;
 }
 ```
 
-Always use double quotes.
+Всегда используйте двойные кавычки.
 
 ```css
-/* Good */
+/* Правильно */
 [type="text"]
 [class^="..."]
 
@@ -298,7 +298,7 @@ Always use double quotes.
   content: "";
 }
 
-/* Bad */
+/* Неправильно */
 [type='text']
 [class^='...']
 
@@ -307,80 +307,80 @@ Always use double quotes.
 }
 ```
 
-Include a single space before the opening brace of a ruleset.
+Всегда вставляйте один пробел перед символом фигурной скобки
 
 ```css
-/* Good */
+/* Правильно */
 .header {
   ...
 }
 
-/* Bad */
+/* Неправильно */
 .header{
   ...
 }
 ```
 
-Include a single space after the colon of a declaration.
+После двоеточия объявления свойства также вставляйте один пробел
 
 ```css
-/* Good */
+/* Правильно */
 .header {
   margin-bottom: 20px;
 }
 
-/* Bad */
+/* Неправильно */
 .header{
   margin-bottom:20px;
 }
 ```
 
-Include a semi-colon at the end of the last declaration in a declaration block.
+В блоке объявлений свойств после каждого свойства всегда вставляйте точку с запятой
 
 ```css
-/* Good */
+/* Правильно */
 .header {
   margin-bottom: 20px;
 }
 
-/* Bad */
+/* Неправильно */
 .header{
   margin-bottom:20px
 }
 ```
 
-Keep one declaration per line.
+Каждый селектор при его объявлении пишите на отдельной строке
 
 ```css
-/* Good */
+/* Правильно */
 .selector-1,
 .selector-2,
 .selector-3 {
   ...
 }
 
-/* Bad */
+/* Неправильно */
 .selector-1, .selector-2, .selector-3 {
   ...
 }
 ```
 
-Single declarations should remain in one line.
+Обьявления селекторов с единственным свойством пишите вместе со свойством на одной строке
 
 ```css
-/* Good */
+/* Правильно */
 .selector-1 { width: 50%; }
 
-/* Bad */
+/* Неправильно */
 .selector-1 {
   width: 50%;
 }
 ```
 
-Separate each ruleset by a blank line.
+Разделяйте каждое объявление селектора пустой строкой
 
 ```css
-/* Good */
+/* Правильно */
 .selector-1 {
   ...
 }
@@ -389,7 +389,7 @@ Separate each ruleset by a blank line.
   ...
 }
 
-/* Bad */
+/* Неправильно */
 .selector-1 {
   ...
 }
@@ -398,16 +398,18 @@ Separate each ruleset by a blank line.
 }
 ```
 
-Use lowercase, shorthand hex values and avoid specifying units is zero-values.
+Используйте нижний регистр и сокращения для обозначения шестнадцетиричных цветов
+
+Не пишите обозначений для нулевых величин.
 
 ```css
-/* Good */
+/* Правильно */
 .selector-1 {
   color: #aaa;
   margin: 0;
 }
 
-/* Bad */
+/* Неправильно */
 .selector-1 {
   color: #AAAAAA;
   margin: 0px;
@@ -415,12 +417,12 @@ Use lowercase, shorthand hex values and avoid specifying units is zero-values.
 ```
 
 <a name="css-order"></a>
-### 3.2. CSS Declaration Order
+### 3.2. Порядок объявлений в CSS
 
-The declarations should be added in alphabetical order.
+Объявления свойств должны идти в алфавитном порядке
 
 ```css
-/* Good */
+/* Правильно */
 .selector-1 {
   background: #fff;
   border: #333 solid 1px;
@@ -432,7 +434,7 @@ The declarations should be added in alphabetical order.
   width: 200px;
 }
 
-/* Bad */
+/* Неправильно */
 .selector-1 {
   padding: 5px;
   height: 200px;
@@ -446,15 +448,15 @@ The declarations should be added in alphabetical order.
 ```
 
 <a name="css-class-name"></a>
-### 3.3. CSS Class Name
+### 3.3. Имена классов в CSS
 
-Keep class lowercase and use dashes.
+Используйте только нижний регистр и вставляйте дефисы между словами
 
 ```css
-/* Good */
+/* Правильно */
 .nav-item { ... }
 
-/* Bad */
+/* Неправильно */
 .NavItem { ... }
 .nav_item { ... }
 ```
