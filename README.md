@@ -9,90 +9,90 @@
 
 Так как это новый документ, некоторые участки кода в старых проектах могут не соответствовать данным правилам.
 
-This is a live document and changes can occur at any time.
+Этот документ постоянно обновляется и время от времени могут появляться изменения
 
-## Summary
+## Содержание
 
-1. [Commits] (#commits)
+1. [Git] (#commits)
 1. [HTML] (#html)
 1. [CSS] (#css)
 1. [Javascript] (#js)
-1. [References](#references)
-1. [Translations](#translations)
-1. [License](#license)
+1. [Ссылки](#references)
+1. [Переводы](#translations)
+1. [Лицензия](#license)
 
 <a name="commits"></a>
-## 1. Commits
+## 1. Git
 
-For facilitate the contribution of any people in projects, all commit messages, pull request title or issues discussion must be in **English**.
+Для облегчения содействия других людей в проектах, все описания commit'ов, названия pull request'ов или записей о багах должны быть написаны на **Английском языке**
 
-Before commit adjusts in project, check if exists an open issue and make references for this issue using '#' in your commit message.
+Прежде чем commit'ить что-либо, нужно проверять, нет ли других commit'ов с таким названием. Если такие есть, писать номер исправления после символа #
 
 ```javascript
-// Good
+// Правильно
 git commit -m "Add placeholder in input #10"
 
-// Bad
+// Неправильно
 git commit -m "Add placeholder in input"
 ```
 
 <a name="html"></a>
 ## 2. HTML
 
-The main influence for the HTML rules is the [Code Guide by @mdo](https://github.com/mdo/code-guide).
+Некоторые части раздела про HTML взяты с ["Code Guide by @mdo"](https://github.com/mdo/code-guide).
 
-### HTML Summary
+### Оглавление HTML
 
-1. [HTML Syntax] (#html-syntax)
-1. [HTML Comments] (#html-comments)
-1. [HTML Character Encoding] (#html-encoding)
-1. [HTML Attribute Order] (#html-attribute-order)
-1. [HTML Performance] (#html-performance)
-1. [HTML Base Code] (#html-base)
+1. [Синтаксис HTML] (#html-syntax)
+1. [Комментарии HTML] (#html-comments)
+1. [Кодировка документов HTML] (#html-encoding)
+1. [Порядок аттрибутов в HTML] (#html-attribute-order)
+1. [Производительность HTML-кода] (#html-performance)
+1. [Базовый шаблон HTML-кода] (#html-base)
 
 <a name="html-syntax"></a>
-### 2.1. HTML Syntax
+### 2.1. Синтаксис HTML
 
-Use soft tabs with two spaces. You can configure your editor for this.
+Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <nav class="nav">
   <ul class="nav-menu">
     <li class="nav-item">
       <a class="nav-link">
 
-<!-- Bad-->
+<!-- Неправильно -->
 <nav class="nav">
       <ul class="nav-menu">
             <li class="nav-item">
                   <a class="nav-link">
 ```
 
-Always use double quotes.
+Всегда используйте двойные кавычки в HTML.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <div class="main">
 
-<!-- Bad-->
+<!-- Неправильно -->
 <div class='main'>
 ```
 
-Don't include a `/` in self-closing elements.
+Не включайте символ '/' в самозакрывающиеся теги.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <hr>
 
-<!-- Bad-->
+<!-- Неправильно -->
 <hr />
 ```
 
-Separate block element by a blank line and agroup the inners block elements.
+Разделяйте блочные элементы пустой строкой и группируйте внутренние элементы блоков
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <ul class="nav-tabs">
   <li>...</li>
   <li>...</li>
@@ -104,7 +104,7 @@ Separate block element by a blank line and agroup the inners block elements.
   ...
 </div>
 
-<!-- Bad-->
+<!-- Неправильно -->
 <ul class="nav-tabs">
 
   <li>...</li>
@@ -122,19 +122,19 @@ Separate block element by a blank line and agroup the inners block elements.
 ```
 
 <a name="html-comments"></a>
-### 2.2. HTML Comments
+### 2.2. Комментарии в HTML
 
-Follow this rule to add comments in HTML.
+Следуйте этому правилу при написании комментариев:
 
 ```html
-<!-- This is a good example -->
-<!-- /Closing a good example -->
+<!-- Пример комментариев в HTML -->
+<!-- /Конец примера комментариев в HTML -->
 ```
 
 <a name="html-encoding"></a>
-### 2.3. HTML Character Encoding
+### 2.3. Кодировка HTML-документво
 
-Always use UTF-8 for character encoding.
+Всегда используйте кодировку UTF-8 в документах.
 
 ```html
 <head>
@@ -143,9 +143,9 @@ Always use UTF-8 for character encoding.
 ```
 
 <a name="html-attribute-order"></a>
-### 2.4. HTML Attribute Order
+### 2.4. Порядок аттрибутов в HTML
 
-HTML attributes should be in this order for facilitate the reading.
+Аттрибуты в HTML должны следовать данному порядку для облегчения чтения кода.
 
 1. `class`
 1. `id`, `name`
@@ -163,35 +163,35 @@ HTML attributes should be in this order for facilitate the reading.
 ```
 
 <a name="html-performance"></a>
-### 2.5. HTML Performance
+### 2.5. Производительность HTML
 
-No need to specify a type when including CSS and JavaScript files as `text/css` and `text/javascript`.
+Нет необходимости указывать тип CSS и JS файлов в аттрибуте type, такие как `text/css` и `text/javascript`.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <link rel="stylesheet" href="assets/css/style.css" />
 <script src="scripts.min.js"></script>
 
-<!-- Bad -->
+<!-- Не правильно -->
 <script src="scripts.min.js"></script>
 </head>
 <body>
 ```
 
-For a better performance, all javascripts files must be at the end of the code. Before closing the `<body>`.
+Для увеличения скорости загрузки страницы указывайте ссылки на Javascript-скрипты перед закрывающим тегом `<body>`.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <script src="scripts.min.js"></script>
 </body>
 
-<!-- Bad -->
+<!-- Не правильно -->
 <script src="scripts.min.js"></script>
 </head>
 <body>
 ```
 
-Always minify the code in projects only in HTML. Task builders like [Grunt](http://gruntjs.com/) leaves this easier.
+Всегда сокращайте код в проектах на чистом HTML. Таск-менеджеры, вроде [Grunt](http://gruntjs.com/) leaves this easier.
 
 ```html
 <!-- Good -->
