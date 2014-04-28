@@ -1,10 +1,11 @@
-My Coding Style
+Стиль кода от LFeh
 ============
 
-> "Every line of code should appear to be written by a single person, no matter the number of contributors." - Chinese Proverb.
+> "Каждая линия кода должна быть написана так, будто её писал лишь один человек, вне зависимости от количества разработчиков." - Китайская народная.
 
-The following document describes the rules of writing in development languages that I use: HTML, CSS and Javascript.
+Этот документ описывает правила написания кода для языков, которые я использую: HTML, CSS и Javascript.
 
+Этот репозиторий не был задуман как целый проект для описания моего стиля кода. Я лишь хотел поместить .
 The idea of this repository is not to be a complete code guide. Only to have a place for myself and other developers who participate in my projects able to inform the coding standards used.
 
 As this is a new document, some rules may not have been applied in old projects.
