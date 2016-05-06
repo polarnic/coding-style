@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/3603793/15085619/b7b0423a-13b1-11e6-8e47-e8ed523f6ff6.png" width="200">
+</p>
+
 Стиль кода от LFeh
 ============
 
@@ -15,8 +19,11 @@
 
 1. [Git] (#commits)
 1. [HTML] (#html)
+1. [Jade] (#jade)
 1. [CSS] (#css)
+1. [CSS-препроцессоры] (#css-preprocessors)
 1. [Javascript] (#js)
+1. [Стартовый шаблон] (#js)
 1. [Ссылки](#references)
 1. [Переводы](#translations)
 1. [Лицензия](#license)
@@ -53,7 +60,7 @@ git commit -m "Add placeholder in input"
 <a name="html-syntax"></a>
 ### 2.1. Синтаксис HTML
 
-Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
+Используйте мягкую табуляцию (soft tabs) размером в два пробела. Это настраивается в редакторе кода.
 
 ```html
 <!-- Правильно -->
@@ -191,13 +198,13 @@ git commit -m "Add placeholder in input"
 <body>
 ```
 
-Всегда сокращайте код в проектах на чистом HTML. Таск-менеджеры, вроде [Grunt](http://gruntjs.com/) leaves this easier.
+Всегда сокращайте код в проектах на чистом HTML. Таск-менеджеры, вроде [Gulp](http://gulpjs.com/) упрощают эту задачу.
 
 ```html
-<!-- Good -->
+<!-- Правильно -->
 <html><head>...</head><body><div class="container">...</div></body></html>
 
-<!-- Bad -->
+<!-- Неправильно -->
 <html>
   <head>
     ...
@@ -253,8 +260,118 @@ git commit -m "Add placeholder in input"
 ...
 ```
 
+<a name="jade"></a>
+## 3. Jade
+
+Сейчас я (автор) использую Jade как шаблонизатор.
+
+### Разделы по Jade
+
+1. [Синтаксис Jade](#jade-syntax)
+1. [Комментарии Jade](#jade-comments)
+1. [Стартовый шаблон на Jade](#jade-base)
+
+<a name="jade-syntax"></a>
+### 3.1. Синтаксис Jade
+
+Аналогично с HTML, используйте мягкие табы размером в два пробела. Настраивается в вашем редакторе.
+
+```javascript
+//- Правильно
+nav.navbar
+  ul.nav
+    li.nav-item
+      a.nav-link
+
+//- Неправильно
+nav.navbar
+    ul.nav
+        li.nav-item
+            a.nav-link
+```
+
+Всегда используйте *одинарные* кавычки.
+
+```javascript
+//- Правильно
+button.btn(data-toggle='collapse')
+
+//- Неправильно
+button.btn(data-toggle="collapse")
+```
+ 
+Напишите заголовок блока, разделяйте блочные элементы **двумя** чистыми линиями и группируйте внутренние элементы блока.
+
+```javascript
+//- Правильно
+ 
+//- Header
+//- ===================================
+header.header(role='banner')
+  a.logo(href='#', role='logo')
+
+
+//- Main
+//- ===================================
+main.main(role='main')
+  section.content
+ 
+//- Неправильно
+header.header(role='banner')
+  a.logo(href='#', role='logo') 
+main.main(role='main') 
+  section.content
+```
+
+<a name="jade-comments"></a>
+### 3.2. Комментарии Jade
+
+При добавлении комментариев следуйте этому правилу
+
+```javascript
+//- Это пример правильного комментария 
+
+// А это пример неправильного
+```
+
+Комментарии с `//-` в начале не компилируются в HTML.
+  
+<a name="jade-base"></a>
+### 3.3. Стартовый шаблон на Jade
+
+Код далее помогает быстро стартовать проект
+
+```javascript
+doctype html
+html(lang='en')
+  head 
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='format-detection', content='telephone=no')
+
+    //- Title
+    //- ===================================
+    title Заголовок страницы
+
+    //- Favicon and SVG logo
+    //- ===================================
+    link(rel='shortcut icon', href='ico/favicon.ico')  
+    link(rel='logo', type='image/svg', href='svg/logo/logo.svg')
+
+    //- Stylesheet and fonts
+    //- ===================================
+    link(href='css/style.css', rel='stylesheet')  
+
+  body 
+ 
+    //- Scripts
+    //- ===================================
+    script(src='js/scripts.min.js') 
+```
+
 <a name="css"></a>
-## 3. CSS
+## 4. CSS
 
 Основы раздела про CSS взяты с [Code Guide by @mdo](https://github.com/mdo/code-guide) и ["Разговорный CSS"](https://github.com/necolas/idiomatic-css/).
 
@@ -265,11 +382,9 @@ git commit -m "Add placeholder in input"
 1. [Имена классов в CSS] (#css-class-name)
 1. [Производительность CSS] (#css-performance)
 1. [Адаптивность и @media-запросы] (#mobile-first-and-media-queries)
-1. [Препроцессоры] (#css-pre-processors)
-1. [Комментарии в CSS] (#css-comments)
 
 <a name="css-syntax"></a>
-### 3.1. Синтаксис
+### 4.1. Синтаксис
 
 Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
@@ -377,7 +492,7 @@ git commit -m "Add placeholder in input"
 }
 ```
 
-Разделяйте каждое объявление селектора пустой строкой
+Разделяйте каждое объявление селектора пустой строкой.
 
 ```css
 /* Правильно */
@@ -417,7 +532,7 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="css-order"></a>
-### 3.2. Порядок объявлений в CSS
+### 4.2. Порядок объявлений в CSS
 
 Объявления свойств должны идти в алфавитном порядке
 
@@ -448,7 +563,7 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="css-class-name"></a>
-### 3.3. Имена классов в CSS
+### 4.3. Имена классов в CSS
 
 Используйте только нижний регистр и вставляйте дефисы между словами
 
@@ -490,7 +605,7 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="css-performance"></a>
-### 3.4. Производительность CSS
+### 4.4. Производительность CSS
 
 Никогда не используйте идентификаторы.
 
@@ -518,7 +633,7 @@ header
 section
 ```
 
-Избегайте гнездящихся элементов, используйте вместо них отдельные классы
+Избегайте вложенных элементов, используйте вместо них отдельные классы
 
 ```css
 /* Правильно */
@@ -533,7 +648,7 @@ section
 .navbar ul li a { ... }
 ```
 
-Используйте гнездящиеся элементы только когда нужно поменять свойства класса в зависимости от его вложенности в другие классы. Не используйте гнёзда с вложенностью более трёх селекторов
+Используйте селекторы со вложенностью только когда нужно поменять свойства класса в зависимости от его вложенности в другие классы. Не углубляйтесь дальше трёх селекторов
 
 ```css
 /* Правильно */
@@ -545,7 +660,7 @@ section
 .progress.active .progress-bar .progress-item span { ... }
 ```
 
-Сокращайте CSS-код. Таск-менеджеры, такие как [Grunt](http://gruntjs.com/) упрощают это.
+Сокращайте CSS-код. Таск-менеджеры, такие как [Gulp](http://gulpjs.com/) упрощают это.
 
 ```css
 /* Правильно */
@@ -561,9 +676,9 @@ section
 ```
 
 <a name="mobile-first-and-media-queries"></a>
-### 3.5 Адаптивность и @media-запросы
+### 4.5 Адаптивность и @media-запросы
 
-Начинайте разработку части кода с введения основных правил и @media-запросов для этой части.
+Начинайте разработку с введения основных правил и @media-запросов для разработки с паттерном mobile-first.
 
 ```css
 /* Правильно */
@@ -621,60 +736,226 @@ section
 }
 ```
 
-<a name="css-pre-processors"></a>
-### 3.6. Препроцессоры
+<a name="css-preprocessors"></a>
+### 5. Препроцессоры
 
-Во всех своих проектах я (автор) использую `LESS`.
+Во всех своих проектах я (автор) использую препроцессоры. Сейчас я перешёл на Stylus, но в некоторых проектах ещё используется `LESS`.
 
-Осторожнее с гнездящимися элементами. Лучше просто продолжайте обходиться без них.
+### Оглавление по CSS-препроцессорам
+
+1. [Синтаксис CSS-препроцессоров](#preprocessors-syntax)  
+1. [Производительность CSS-препроцессоров](#preprocessors-performance) 
+1. [Медиазапросы в препроцессорах](#preprocessors-media-queries) 
+1. [Комментарии в CSS-препроцессорах](#preprocessors-comments)
+
+
+<a name="preprocessors-syntax"></a>
+### 5.1. Синтаксис CSS-препроцессоров
+
+Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
 ```css
-/* Правильно */
-.nav-item { ... }
+// Правильно
+.nav-item 
+  display inline-block  
 
-/* Неправильно */
-.navbar {
-  .nav {
-    .nav-item {
-      ...
-    }
-  }
+// Неправильно
+.nav-item 
+    display inline-block  
+```
+
+Не используйте символы ";", ":" и фигурные скобки
+
+```css
+// Правильно
+.header 
+  position fixed
+  top 0
+  right 0
+  left 0
+
+// Неправильно
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
-```
+``` 
 
-Имена переменных должны быть *семантическими*.
+Каждый селектор объявляйте на отдельной строке.
 
 ```css
-/* Правильно */
-@brand-primary: #049cdb;
+// Правильно
+.selector-1,
+.selector-2,
+.selector-3 
+  ...
+ 
 
-/* Неправильно */
-@color-blue: #049cdb;
+// Неправильно
+.selector-1, .selector-2, .selector-3 
+  ... 
+``` 
+
+Разделяйте вложенные правила пустыми строками, а блоки разделяйте двумя пустыми строками.
+
+```css
+// Правильно
+.navbar 
+  margin 0 0 20px
+
+  li 
+    display inline-block
+
+
+.nav 
+  display block
+
+  li 
+    float left
+
+
+// Неправильно
+.navbar 
+  margin 0 0 20px 
+  li 
+    display inline-block 
+.nav 
+  display block 
+  li 
+    float left
+``` 
+
+Используйте **$** для переменных.
+
+```css
+// Правильно
+$gray-darker  = #111
+$gray-dark    = #393C45
+$gray         = #555
+$gray-light   = #aaa
+$gray-lighter = #ECF1F5
+$gray-white   = #fbfbfb
 ```
 
-<a name="css-comments"></a>
-### 3.7. Комментарии в CSS
+<a name="preprocessors-performance"></a>
+### 5.2. Производительность CSS-препроцессоров
 
-Все комментарии должны быть написаны в синтаксисе используемого препроцессора
+Держитесь подальше от вложенностей, как и в чистом CSS
 
-```js
+```css
+// Правильно
+.nav-item 
+  ...
+
+// Неправильно
+.navbar 
+  .nav 
+    .nav-item 
+      ... 
+```
+
+**Не используйте @extend'ы**, [Всегда пользуйтесь миксинами](http://csswizardry.com/2016/02/mixins-better-for-performance/).
+
+```css
+reset(arg = '')
+  
+  if (arg == list) 
+    margin 0
+    padding-left 0
+    list-style none
+    
+  if (arg == form)  
+    background 0
+    border 0
+    padding 0
+
+.nav
+  reset(list)
+
+.btn
+  reset(form)
+```
+ 
+<a name="preprocessors-media-queries"></a>
+### 5.3. Медиазапросы в препроцессорах
+
+Пишите медиазапросы для элементов прямо внутри них
+
+```css 
+.navbar 
+  position absolute
+  top 5px
+  z-index 5
+   
+  @media (min-width $screen-sm) 
+    position fixed
+    margin-right $space-sm
+  
+  @media (min-width $screen-md)  
+    right 0 
+    top 10px 
+```
+ 
+<a name="preprocessors-comments"></a>
+### 5.4. Комментарии в CSS-препроцессорах
+
+Предоставляйте оглавление в начале каждого файла.
+
+```css 
+//  
+// Variables
 //
-// Раздел
+// 1. Colors
+// 2. Spaces 
+// 3. Media Queries 
+// 4. Typography
+//
+// ===============================================================
+
+// 
+// 1. Colors
 // --------------------------------------------------
 
-// Подраздел
+...
+
+// 
+// 2. Spaces
 // --------------------------------------------------
 
-//
-// Блок комментариев
-//
-//
+...
+```
 
+Для главных элементов
+
+```css  
+// 
+// 1. Header
+// -------------------------------------------------- 
+... 
+```
+
+Для подэлементов
+
+```css   
+// 1.1 Header Item
+// -------------------------------------------------- 
+...
+```
+
+Обычные комментарии
+
+```css   
 // Простой комментарий
-```
+
+// Блочный
+// комментарий
+...
+``` 
 
 <a name="js"></a>
-## 4. Javascript
+## 6. Javascript
 
 Основой этой части документа стали: ["idiomatic.js"](https://github.com/rwldrn/idiomatic.js/) и ["Zeno Rocha Coding Style"](https://github.com/zenorocha/my-coding-style/).
 
@@ -683,10 +964,11 @@ section
 1. [Синтаксис Javascript] (#js-syntax)
 1. [Переменные Javascript] (#js-variables)
 1. [Производительность Javascript-кода] (#js-performance)
+1. [JS и data-атрибуты HTML5](#js-data-attributes)
 1. [Комментарии в Javascript] (#js-comments)
 
 <a name="js-syntax"></a>
-### 4.1. Синтаксис Javascript
+### 6.1. Синтаксис Javascript
 
 Используйте мягкую табуляцию размером в два символа пробела. Это настраивается в редакторе кода.
 
@@ -726,7 +1008,7 @@ var string = "<p class='foo'>Lorem Ipsum</p>";
 var noteClick = me.attr("data-note");
 ```
 
-Пишите `else` на той же линии, что и закрывающая фигурная скобка блока инструкций выражения `if`.
+Пишите `else` на той же строке, что и закрывающая фигурная скобка блока инструкций выражения `if`.
 
 ```js
 // Правильно
@@ -820,7 +1102,7 @@ if (foo == 'foo') {
 ```
 
 <a name="js-variables"></a>
-### 4.2. Переменные Javascript
+### 6.2. Переменные Javascript
 
 Все переменные перед использованием должны быть объявлены.
 
@@ -847,14 +1129,30 @@ me = $(this);
 ```
 
 <a name="js-performance"></a>
-### 4.3. Производительность Javascript-кода
+### 6.3. Производительность Javascript-кода
 
 Используйте [JSHint](http://www.jshint.com/) для выявления ошибок и проблем кода.
 
 Всегда сокращайте и конкатенируйте весь Javascipt-код. Таск-менеджеры, такие как [Grunt](http://gruntjs.com/) упрощают этот процесс.
 
+<a name="js-data-attributes"></a>
+### 6.4. JavaScript and HTML5 Data Attributes
+
+Избегайте использования классов в javascript-манипуляциях. Лучше используйте ***Data-атрибуты HTML5***.
+
+```js
+// Правильно
+$('[data-toggle="tab"]');
+
+// Неправильно
+$('.tab');
+```
+
+Такой подход оставляет на классах всё, что связано со стилями.
+Потому что некоторые элементы, стилизованные одинаково могут по-разному функционировать.
+
 <a name="js-comments"></a>
-### 4.4. Комментарии Javascript
+### 6.5. Комментарии Javascript
 
 Комментарий должен идти одной строкой над строкой комментируемого кода
 
@@ -867,8 +1165,19 @@ var me = $(this);
 var me = $(this); // Пример плохого комментария
 ```
 
+<a name="boilerplate"></a>
+## 7. Стартовый шаблон
+
+Я (автор) сделал стартовый шаблон для этого code style.
+
+<p>
+  <img src="https://cloud.githubusercontent.com/assets/3603793/14390922/a999424c-fd8f-11e5-8fbb-ab908a1d4740.png" width="100">
+</p>
+
+Он называется [Kratos Boilerplate](https://github.com/LFeh/kratos-boilerplate).
+
 <a name="references"></a>
-## 5. Ссылки
+## 8. Ссылки
 
 * [Code Guide by @mdo](https://github.com/mdo/code-guide)
 * [idiomatic CSS](https://github.com/necolas/idiomatic-css/)
@@ -877,12 +1186,12 @@ var me = $(this); // Пример плохого комментария
 * [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 
 <a name="translations"></a>
-## 6. Переводы
+## 9. Переводы
 
 * [Português (Brasil)](/translations/pt-BR/)
-* [English](https://github.com/LFeh/coding-style)
+* [English (оригинал)](https://github.com/LFeh/coding-style)
 
 <a name="license"></a>
-## 7. Лицензия
+## 10. Лицензия
 
 [MIT License](http://felipefialho.mit-license.org/) © Luiz Felipe Tartarotti Fialho
