@@ -139,7 +139,7 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="html-encoding"></a>
-### 2.3. Кодировка HTML-документво
+### 2.3. Кодировка HTML-документов
 
 Всегда используйте кодировку UTF-8 в документах.
 
@@ -150,9 +150,9 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="html-attribute-order"></a>
-### 2.4. Порядок аттрибутов в HTML
+### 2.4. Порядок атрибутов в HTML
 
-Аттрибуты в HTML должны следовать данному порядку для облегчения чтения кода.
+Атрибуты в HTML должны следовать данному порядку для облегчения чтения кода.
 
 1. `class`
 1. `id`, `name`
@@ -172,7 +172,7 @@ git commit -m "Add placeholder in input"
 <a name="html-performance"></a>
 ### 2.5. Производительность HTML
 
-Нет необходимости указывать тип CSS и JS файлов в аттрибуте type, такие как `text/css` и `text/javascript`.
+Нет необходимости указывать тип CSS и JS файлов в атрибуте type, такие как `text/css` и `text/javascript`.
 
 ```html
 <!-- Правильно -->
