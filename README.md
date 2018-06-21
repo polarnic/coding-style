@@ -17,13 +17,13 @@
 
 ## Содержание
 
-1. [Git] (#commits)
-1. [HTML] (#html)
-1. [Jade] (#jade)
-1. [CSS] (#css)
-1. [CSS-препроцессоры] (#css-preprocessors)
-1. [Javascript] (#js)
-1. [Стартовый шаблон] (#js)
+1. [Git](#commits)
+1. [HTML](#html)
+1. [Jade](#jade)
+1. [CSS](#css)
+1. [CSS-препроцессоры](#css-preprocessors)
+1. [Javascript](#js)
+1. [Стартовый шаблон](#js)
 1. [Ссылки](#references)
 1. [Переводы](#translations)
 1. [Лицензия](#license)
