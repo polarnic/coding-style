@@ -17,13 +17,13 @@
 
 ## Содержание
 
-1. [Git] (#commits)
-1. [HTML] (#html)
-1. [Jade] (#jade)
-1. [CSS] (#css)
-1. [CSS-препроцессоры] (#css-preprocessors)
-1. [Javascript] (#js)
-1. [Стартовый шаблон] (#js)
+1. [Git](#commits)
+1. [HTML](#html)
+1. [Jade](#jade)
+1. [CSS](#css)
+1. [CSS-препроцессоры](#css-preprocessors)
+1. [Javascript](#js)
+1. [Стартовый шаблон](#js)
 1. [Ссылки](#references)
 1. [Переводы](#translations)
 1. [Лицензия](#license)
@@ -50,12 +50,12 @@ git commit -m "Add placeholder in input"
 
 ### Оглавление HTML
 
-1. [Синтаксис HTML] (#html-syntax)
-1. [Комментарии HTML] (#html-comments)
-1. [Кодировка документов HTML] (#html-encoding)
-1. [Порядок аттрибутов в HTML] (#html-attribute-order)
-1. [Производительность HTML-кода] (#html-performance)
-1. [Базовый шаблон HTML-кода] (#html-base)
+1. [Синтаксис HTML](#html-syntax)
+1. [Комментарии HTML](#html-comments)
+1. [Кодировка документов HTML](#html-encoding)
+1. [Порядок аттрибутов в HTML](#html-attribute-order)
+1. [Производительность HTML-кода](#html-performance)
+1. [Базовый шаблон HTML-кода](#html-base)
 
 <a name="html-syntax"></a>
 ### 2.1. Синтаксис HTML
@@ -139,7 +139,7 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="html-encoding"></a>
-### 2.3. Кодировка HTML-документво
+### 2.3. Кодировка HTML-документов
 
 Всегда используйте кодировку UTF-8 в документах.
 
@@ -150,9 +150,9 @@ git commit -m "Add placeholder in input"
 ```
 
 <a name="html-attribute-order"></a>
-### 2.4. Порядок аттрибутов в HTML
+### 2.4. Порядок атрибутов в HTML
 
-Аттрибуты в HTML должны следовать данному порядку для облегчения чтения кода.
+Атрибуты в HTML должны следовать данному порядку для облегчения чтения кода.
 
 1. `class`
 1. `id`, `name`
@@ -172,7 +172,7 @@ git commit -m "Add placeholder in input"
 <a name="html-performance"></a>
 ### 2.5. Производительность HTML
 
-Нет необходимости указывать тип CSS и JS файлов в аттрибуте type, такие как `text/css` и `text/javascript`.
+Нет необходимости указывать тип CSS и JS файлов в атрибуте type, такие как `text/css` и `text/javascript`.
 
 ```html
 <!-- Правильно -->
@@ -377,11 +377,11 @@ html(lang='en')
 
 ### Оглавление CSS
 
-1. [Синтаксис CSS] (#css-syntax)
-1. [Порядок обьявления в CSS] (#css-order)
-1. [Имена классов в CSS] (#css-class-name)
-1. [Производительность CSS] (#css-performance)
-1. [Адаптивность и @media-запросы] (#mobile-first-and-media-queries)
+1. [Синтаксис CSS](#css-syntax)
+1. [Порядок обьявления в CSS](#css-order)
+1. [Имена классов в CSS](#css-class-name)
+1. [Производительность CSS](#css-performance)
+1. [Адаптивность и @media-запросы](#mobile-first-and-media-queries)
 
 <a name="css-syntax"></a>
 ### 4.1. Синтаксис
@@ -961,11 +961,11 @@ reset(arg = '')
 
 ### Оглавление Javascript
 
-1. [Синтаксис Javascript] (#js-syntax)
-1. [Переменные Javascript] (#js-variables)
-1. [Производительность Javascript-кода] (#js-performance)
+1. [Синтаксис Javascript](#js-syntax)
+1. [Переменные Javascript](#js-variables)
+1. [Производительность Javascript-кода](#js-performance)
 1. [JS и data-атрибуты HTML5](#js-data-attributes)
-1. [Комментарии в Javascript] (#js-comments)
+1. [Комментарии в Javascript](#js-comments)
 
 <a name="js-syntax"></a>
 ### 6.1. Синтаксис Javascript
